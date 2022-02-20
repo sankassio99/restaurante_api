@@ -17,7 +17,7 @@ class Categoria extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
 
-            $table->integer('restaurante_id');
+            $table->bigInteger('restaurante_id')->unsigned()->index();
 
             $table->foreign('restaurante_id')->references('id')->on('restaurante');
         });

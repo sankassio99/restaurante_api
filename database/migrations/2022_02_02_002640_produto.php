@@ -19,7 +19,7 @@ class Produto extends Migration
             $table->string('imagem');
             $table->double('preco');
 
-            $table->integer('categoria_id');
+            $table->bigInteger('categoria_id')->unsigned()->index();
 
             $table->foreign('categoria_id')->references('id')->on('categoria');
         });

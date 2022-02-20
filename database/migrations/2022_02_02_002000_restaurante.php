@@ -17,11 +17,11 @@ class Restaurante extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
             $table->string('imagem');
-            $table->integer('endereco_id');
+            $table->bigInteger('endereco_id')->unsigned()->index();
 
             $table->foreign('endereco_id')->onDelete('cascade')
                 ->references('id')->on('endereco');
-
+            
             $table->timestamps();
         });
     }

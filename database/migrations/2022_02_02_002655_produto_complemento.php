@@ -17,10 +17,10 @@ class ProdutoComplemento extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
  
-            $table->integer('complemento_id');
+            $table->bigInteger('complemento_id')->unsigned()->index();
             $table->foreign('complemento_id')->references('id')->on('complemento');
 
-            $table->integer('produto_id');
+            $table->bigInteger('produto_id')->unsigned()->index();
             $table->foreign('produto_id')->references('id')->on('produto');
 
         });
